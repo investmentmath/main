@@ -1,0 +1,16 @@
+---
+layout: default
+---
+{% include post.html %}
+
+
+<ul>
+    {% for format in site.pandoc.outputs %}
+    {% capture extension %}{{ format | first }}{% endcapture %}
+    <li>
+    <a href="{{ site.BASE_PATH }}/{{ extension }}{{ page.url | remove:'.html' }}.{{ extension }}">
+        {{ extension }}
+      </a>
+    </li>
+    {% endfor %}
+</ul>

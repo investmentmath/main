@@ -1,0 +1,30 @@
+---
+theme :
+  name : dbyll
+---
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.1/jsxgraphcore.js"></script>
+
+<script type="text/javascript" 
+src="{{ site.BASE_PATH }}/assets/js/dygraph-combined.js"</script>
+
+
+
+<script type="text/x-mathjax-config"> 
+    MathJax.Hub.Config({ 
+        jax: ["input/TeX","output/HTML-CSS"], 
+        extensions: ["tex2jax.js"], 
+        tex2jax: { 
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ], 
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ], 
+        processEscapes: true 
+        }, 
+    }); 
+</script> 
+    
+
+
+{% include default.html %}
+

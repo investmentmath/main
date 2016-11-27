@@ -1,0 +1,57 @@
+# visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
+
+gems: [ 'jekyll-pandoc-multiple-formats' ]
+
+
+pandoc:
+    skip: false
+    impose: false
+    output: tmp
+    flags: '--smart'
+    site_flags: '--mathjax' 
+    outputs:
+        pdf: '--latex-engine=pdflatex --template=myheader.latex' 
+
+paginate: 10 # pagination based on number of posts
+paginate_path: "page:num"
+exclude: ["README.md"] # files to exclude
+markdown:         kramdown
+pygments: true
+
+title: InvestmentMath
+description: Maths for Portfolio Management 
+author:
+  name: InvestmentMath
+  email: investmentmath@gmail.com
+  github: 
+  twitter: 
+  pinterest: 
+  linkedin: 
+  bio: About InvestmentMath 
+  email_md5: 726351295ec82e145928582f595aa3aa
+
+
+rss_path: feed.xml
+categories_path: categories.html
+tags_path: tags.html
+
+BASE_PATH: http://195.154.78.40
+#BASE_PATH: http://localhost:4000
+
+# BASE_PATH: http://dbtek.github.io/dbyll
+
+# All links will be namespaced by BASE_PATH if defined.
+# Links in your website should always be prefixed with {{ site.BASE_PATH }}
+# Do not put a "/" at the end of the url.
+#
+# CNAME (http://yourcustomdomain.com)
+#   DO NOT SET BASE_PATH JUST LEAVE IT BLANK 
+#   (urls will be prefixed with "/" and work relatively)
+#
+# GitHub Pages (http://username.github.io)
+#   DO NOT SET BASE_PATH JUST LEAVE IT BLANK 
+#   (urls will be prefixed with "/" and work relatively)
+#
+# GitHub Project Pages (http://username.github.io/project-name)
+#  A GitHub Project site exists in the `gh-pages` branch of one of your repositories.
+#  REQUIRED! Set BASE_PATH to "http://username.github.io/project-name"
