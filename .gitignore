@@ -1,0 +1,4 @@
+_site/*
+feed.xml
+tmp/*
+log*
