@@ -25,10 +25,10 @@ In [this
 post](/math/2013/05/29/quadratic-variation-and-stochastic-integration.html "QUADRATIC VARIATION AND STOCHASTIC INTEGRATION")
 (I will use the same notation), we established the following algebraic
 identity :
-$$X_{t}^{2}-X_{0}^{2}=\sum_{i=1}^{{k}}2X_{t_{i-1}}(X_{t_{i}}-X_{t_{i-1}})+\sum_{i=1}^{k}(X_{t_{i}}-X_{t_{i-1}})^{2},$$
+$$X_{t}^{2}-X_{0}^{2}=\sum_{i=1}^{k}2X_{t_{i-1}}(X_{t_{i}}-X_{t_{i-1}})+\sum_{i=1}^{k}(X_{t_{i}}-X_{t_{i-1}})^{2},$$
 along a grid $\pi_{[0,t]}$ satisfying $t_{0}=0 ,t_{k}=t$.
 Applying the polarization identity[^1] we can derive :
-$$X_{t}Y_{t}-X_{0}Y_{0}=\sum_{i=1}^{{k}}Y_{t_{i-1}}(X_{t_{i}}-X_{t_{i-1}})+\sum_{i=1}^{{k}}X_{t_{i-1}}(Y_{t_{i}}-Y_{t_{i-1}})+$$
+$$X_{t}Y_{t}-X_{0}Y_{0}=\sum_{i=1}^{k}Y_{t_{i-1}}(X_{t_{i}}-X_{t_{i-1}})+\sum_{i=1}^{k}X_{t_{i-1}}(Y_{t_{i}}-Y_{t_{i-1}})+$$
 $$\sum_{i=1}^{k}(X_{t_{i}}-X_{t_{i-1}})(Y_{t_{i}}-Y_{t_{i-1}}).$$
 We will concentrate on this last relationship since it contains the
 other one as a special case.
@@ -54,7 +54,7 @@ We can also study what happens when one of the process is a local
 continuous martingale, say $(X_{t})_{t \in [0,T]}$ while the other
 one, say $(Y_{t})_{t \in [0,T]}$, is continuous bounded variation
 process. In this case, on can make use the following identity :
-$$X_{t}Y_{t}-X_{0}Y_{0}=\sum_{i=1}^{{k}}X_{t_{i}}(Y_{t_{i}}-Y_{t_{i-1}})+\sum_{i=1}^{{k}}Y_{t_{i-1}}(X_{t_{i}}-X_{t_{i-1}}).$$
+$$X_{t}Y_{t}-X_{0}Y_{0}=\sum_{i=1}^{k}X_{t_{i}}(Y_{t_{i}}-Y_{t_{i-1}})+\sum_{i=1}^{k}Y_{t_{i-1}}(X_{t_{i}}-X_{t_{i-1}}).$$
 The dominated convergence theorem of Lebesgue Stieltjes integration
 shows that the first term converges to the Lebesgue Stieltjes
 integral[^3] $(\int_{0}^{t}X_{u}dY_{u})_{t \in [0,T]}$
@@ -182,8 +182,8 @@ Press.
  
 
 [^3]:  In Lebesgue Stieltjes integration, the sums
-    $\sum_{i=1}^{{k}}X_{t_{i}}(Y_{t_{i}}-Y_{t_{i-1}})$ and
-    $\sum_{i=1}^{{k}}X_{t_{i-1}}(Y_{t_{i}}-Y_{t_{i-1}})$
+    $\sum_{i=1}^{k}X_{t_{i}}(Y_{t_{i}}-Y_{t_{i-1}})$ and
+    $\sum_{i=1}^{k}X_{t_{i-1}}(Y_{t_{i}}-Y_{t_{i-1}})$
     converge to the same result, the integral
     $\int_{0}^{t}X_{u}dY_{u}$. Within stochastic integration,
     i.e. when $(Y_{t})_{t \in [0,T]}$ is a local martingale, the
