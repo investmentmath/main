@@ -1,6 +1,7 @@
 # visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
 
-gems: [ 'jekyll-pandoc-multiple-formats' ]
+#gems: [ 'jekyll-pandoc-multiple-formats' ]
+gems: [ 'jekyll-pandoc-multiple-formats','jekyll-paginate' ]
 
 
 pandoc:
@@ -10,13 +11,13 @@ pandoc:
     flags: '--smart'
     site_flags: '--mathjax' 
     outputs:
-        pdf: '--latex-engine=pdflatex --template=myheader.latex' 
+        pdf: '--latex-engine=pdflatex' 
 
 paginate: 10 # pagination based on number of posts
 paginate_path: "page:num"
 exclude: ["README.md"] # files to exclude
 markdown:         kramdown
-pygments: true
+highlighter: true
 
 title: InvestmentMath
 description: Maths for Portfolio Management 
@@ -36,6 +37,7 @@ categories_path: categories.html
 tags_path: tags.html
 
 BASE_PATH: http://195.154.78.40
+#BASE_PATH: http://195.154.78.40:1234
 #BASE_PATH: http://localhost:4000
 
 # BASE_PATH: http://dbtek.github.io/dbyll
