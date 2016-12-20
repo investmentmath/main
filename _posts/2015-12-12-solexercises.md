@@ -69,6 +69,8 @@ $$w_{0}\pmb{\pi}=\frac{1}{\alpha}\Sigma^{-1}\pmb{\mu}-\frac{\lambda}{\alpha}\Sig
 The first term corresponds to the optimal unconstrained solution of question $1$. The second term ensures that what the whole wealth 
 is invested.
 
+3.
+
 * We have:
 $$w_{0}=\frac{1}{\alpha}\pmb{e}'\Sigma^{-1}\pmb{\mu}-\frac{\lambda}{\alpha}\pmb{e}'\Sigma^{-1}\pmb{e}.$$
 
@@ -80,7 +82,7 @@ An infinitesimal increase in wealth has an inmpact on utility measured through (
 $$\pmb{\pi}'\pmb{\mu}-\alpha w_{0}\pmb{\pi}'\Sigma\pmb{\pi},$$
 which is just $\lambda$. Therefore when $\lambda<0$ indeed, the marginal utility of wealth is negative. This is due to the fact that the utility function decreases beyond a certain level of wealth.
 
-3. 
+4. 
 
 * In the presence of cash, we know that we can parameterize the optimization problem using the risky asset weights. The optimization is unconstrained and the cash position is deduced from the budget constraint. The risky asset weight solves the problem of question $1$ with $\mu-r^{f}$ in place of $\mu$. The residual amount of wealth (positive if wealth is high, negative if wealth is low) is invested in the riskless asset. The level of investment in the risky assets is always optimal (i.e. as in question $1$ up to the substitution of $\mu-r^{f}$ for $\mu$).
 
