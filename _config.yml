@@ -3,7 +3,6 @@
 #gems: [ 'jekyll-pandoc-multiple-formats' ]
 gems: [ 'jekyll-pandoc-multiple-formats','jekyll-paginate' ]
 
-
 pandoc:
     skip: false
     impose: false
