@@ -79,7 +79,7 @@ $$f(x)-\langle\gamma_{*},g(x)\rangle-\langle\lambda_{*},h(x)\rangle\leq f(x_{*})
 $$\forall x \in S,\, \gamma \geq 0,\, \lambda.$$
 This is the famous saddle point property for the Lagrangian of the constrained optimization problem.
 
-### Envelope theorem
+### Multipliers as derivatives of the value function 
 
 One can consider the following maximization problem, noted $P(\alpha,\beta)$:
 $$\underset{x}{\text{max}} \; f(x)$$
