@@ -34,11 +34,11 @@ $$x \in S,$$
 $$h(x)=0,$$ 
 $$g(x)\leq 0.$$ 
 
-**Theorem (Kuhn-Tucker)**: *Let $x_{*}$ be a solution of $P$. Then there exists $(\eta_{*},\gamma_{*},\lambda_{*}) \in \mathbb{R}\times\mathbb{R}^{m}\times\mathbb{R}^{n}$ satisfying*:
+**Theorem (Kuhn-Tucker)**: *Let $x_{*}$ be a solution of $P$. Then there exists $(\eta_{*},\gamma_{*},\lambda_{*}) \in \mathbb{R}\times\mathbb{R}^{m}\times\mathbb{R}^{n}$ satisfying (non triviality)*:
 
-$$(\eta_{*},\gamma_{*},\lambda_{*})\neq 0 \, \text{({\em non triviality})},$$
+$$(\eta_{*},\gamma_{*},\lambda_{*})\neq 0,$$
 *as well as (positivity and complementary slackness)*:
-$$\eta_{*}=0\,\text{{\em or}}\,1,\, \gamma_{*}\geq 0, \,\langle\gamma_{*},g(x_{*})\rangle=0,$$
+$$\eta_{*}=0\; \textrm{or}\; 1,\, \gamma_{*}\geq 0, \,\langle\gamma_{*},g(x_{*})\rangle=0,$$
 *and (maximization condition)*, $\forall x \in S$:
 $$\eta_{*} f(x)-\langle\gamma_{*},g(x)\rangle-\langle\lambda_{*},h(x)\rangle\leq \eta_{*} f(x_{*})-\langle\gamma_{*},g(x_{*})\rangle-\langle\lambda_{*},h(x_{*})\rangle=\eta_{*} f(x_{*}).$$
 
