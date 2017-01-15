@@ -14,7 +14,7 @@ fullview: false
 ## Mean-Variance
 
 
-### Exercise 1
+### Exercise 1.1
 
 * If you find the following difficult, solve the problem in the context of a single risky asset.
 
@@ -87,7 +87,7 @@ which is just $\lambda$. Therefore when $\lambda<0$ indeed, the marginal utility
 * In the presence of cash, we know that we can parameterize the optimization problem using the risky asset weights. The optimization is unconstrained and the cash position is deduced from the budget constraint. The risky asset weight solves the problem of question $1$ with $\mu-r^{f}$ in place of $\mu$. The residual amount of wealth (positive if wealth is high, negative if wealth is low) is invested in the riskless asset. The level of investment in the risky assets is always optimal (i.e. as in question $1$ up to the substitution of $\mu-r^{f}$ for $\mu$).
 
 
-### Exercise 2
+### Exercise 1.2
 
 * See the notebook, which directly applies the formulas in the section on static optimization.
 
@@ -111,7 +111,7 @@ $$\rho_{*}=\pmb{e}'\Sigma^{-1}(\pmb{\mu}-r^{f}\pmb{e}).$$
 * The efficient proportion of bonds to equities is at least four to one. This holds if bonds are quite attractive relatively to equities. You can play with the program to find specific parameters that match this situation.  
 
 
-### Exercise 4
+### Exercise 1.4
 1.
 
 * The first order condition is:
@@ -131,8 +131,68 @@ with $\sigma_{\rho}$ being the volatility of the optimal portfolio and $\lambda_
 $$\mu_{\rho}=\lambda\sigma_{\rho}=\rho\sigma_{\rho}^{2}.$$
 In the $(\sigma,\mu)$ space, the locus of optimal portfolios attached to a given $\rho$, as we vary the Sharpe ratio $\lambda$, is a parabola.  
 
+## Dynamics, discrete time
 
-### Exercise 5
+### Exercise 2.1
+
+1. 
+
+* Directly from the course:
+$$\underset{\pmb{\pi}_{[t,T-1]}}{\text{max}}
+\; E_{t}\left[\frac{w_{T}^{1-\rho}}{1-\rho}\right]$$
+$$\text{s.t.}$$
+$$\; w_{k+1}=w_{k}\pi_{k}'R_{k+1},\,\pi_{k}'e=1,\,k=t,\ldots,T-1.$$
+
+2. 
+
+$$\underset{\pi}{\text{max}}
+\; E_{T-1}\left[\frac{w_{T-1}^{1-\rho}(\pi'R_{T})^{1-\rho}}{1-\rho}\right],$$
+$$\text{s.t.}$$
+$$\; \pi'e=1.$$
+
+* The constraint is linear and the criterion is concave (being a composition of a concave function with a linear one). We are thus in the usual Khün-Tucker context. Through the Lagrangian:
+$${\cal L}=w_{T-1}^{1-\rho}E_{T-1}\left[\frac{(\pi'R_{T})^{1-\rho}}{1-\rho}\right]-\lambda \pi'e,$$
+we get the first order condition (differentiating with respect to $\pi$):
+$$w_{T-1}^{1-\rho}E[(\pi'R_{T})^{-\rho}R_{T}]=\lambda e.$$
+
+* Being in the standard concave case, the first order condition is both necessary and sufficient.
+
+3.
+
+* Consider two levels of initial wealth in date $T-1$, $w^{0}$ and $w^{1}$. Suppose the the policy $\pi^{0}$ is optimal for wealth level $w_{0}$ leading to utility level $V(w^{0})$. Then applying the policy for wealth level $w^{1}$ leads to utility level $(w^{1}/w^{0})^{1-\rho}V(w_{0})$. We thus have $V(w^{1})\ge (w^{1}/w^{0})^{1-\rho}V(w_{0})$. Inverting the role of $w^{0}$ and $w^{1}$ leads to $V(w^{0})\ge (w^{0}/w^{1})^{1-\rho}V(w_{1})$. Combining the two inequalities proves the homogeneity of the value function, which can choose to write $w^{1-\rho}V(1)$. We can thus write:
+$$V_{T-1}(w_{T-1})=w_{T-1}^{1-\rho}V_{T-1}(1).$$
+
+* The constant of proportionality is the value attached to:
+$$\underset{\pi}{\text{max}}
+\; E_{T-1}\left[\frac{(\pi'R_{T})^{1-\rho}}{1-\rho}\right],$$
+$$\text{s.t.}$$
+$$\; \pi'e=1.$$
+
+* In other words:
+$$V_{T-1}(1)=E\left[\frac{(\pi_{*}'R)^{1-\rho}}{1-\rho}\right],$$
+which is negative and is a constant.
+
+4. 
+
+* At step $t$, the optimization program is, by recurrence:
+$$\underset{\pi}{\text{max}}
+\; E_{t}\left[w_{t}^{1-\rho}(\pi'R_{t+1})^{1-\rho}V_{t+1}(1)\right],$$
+$$\text{s.t.}$$
+$$\; \pi'e=1.$$
+
+* We then proceed as in the previous question. The program has the same characteristics (concave negative criterion, linear constraint). The value function is homogenous and we can write it as $w^{1-\rho}V_{t}(1)$. Because $V_{t+1}(1)$ is a negative constant, the optimization problem actually leads to the same optimal portfolio $\pi_{*}$. We then have the recurrence relation:
+$$V_{t}(1)=V_{t+1}(1)E\left[(\pi_{*}'R)^{1-\rho}\right].$$
+
+* The terminal condition implies $V_{T}(1)=1/(1-\rho)$.
+
+5. 
+
+* We established that the optimal portfolio is the same at each date. That is the main take-away. In this setup, the investor's choice does not depend on the investment horizon. He rebalanced to the same set of optimal weights at each step. 
+
+
+
+
+### Exercise 2.3
 
 1.
 
@@ -186,7 +246,10 @@ $$\text{s.t.}:$$
 $$0 \leq \pi_{t} \leq 1.$$
 This gives the same result for every date $t$ (we have i.i.d. risky asset returns and a constant cash rate).
 
-### Exercise 7
+
+## Dynamics, continuous time
+
+### Exercise 3.1
 
 1. 
 
@@ -237,7 +300,7 @@ which is what we needed to establish.
 of the quadratic variation. When quadratic variation is deterministic, it is equal to the variance (as seen from date $0$) of $M_{t}$. 
 
 
-### Exercise 8
+### Exercise 3.2
 
 1. 
 
@@ -299,7 +362,7 @@ $$P_{t}^{T}=\exp\left(-\bar{r}(T-t)-(r_{t}-\bar{r})b(T-t)+\frac{\sigma_{r}^{2}}{
 
 * Applying Ito to the above formula shows that the volatility of the price process is $\sigma_{r}b(T-t)$.
 
-### Exercise 9
+### Exercise 3.3
 
 1. 
 
@@ -332,26 +395,4 @@ $$P_{t}^{T}=\exp\left(-\tilde{r}(T-t)-(r_{t}-\tilde{r})b(T-t)+\frac{\sigma_{r}^{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
 

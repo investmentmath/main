@@ -97,10 +97,36 @@ The vector $(\gamma,\lambda)$ is called the superdifferential of the concave val
 
 
 
-
 ### Remark
 
 The most confusing aspect in the multiplier rule is perhaps the choice of the sign of the multiplier in the case of inequality constraints. In other words, how should we choose to formulate the Lagrangian? The logic is as follows. When the inequality constraint is of the form $g(x)\leq 0$ and the problem is a maximization one, the multiplier rule should be that at the optimum, increasing $f$ should require increasing $g$. Gradients therefore have to be colinear (up to the adjustment for the equality constraints) with a positive constant of proportionality. In the expression below:
 $$\nabla f(x)=\langle\gamma_{*},\nabla g(x)\rangle+\langle\lambda_{*},\nabla h(x)\rangle,$$
 $\gamma$ should be positive. This pins down the form of the Lagrangian. Should the constraint be $g(x)\geq 0$, the sign of $\gamma$ would have to be reversed.
 
+### Envelope Theorem
+
+The penultimate section gives the derivatives of the value function with respect to the parameters of the constraint. One can understand this rule adapting an argument usually coined the envelope theorem. The envelope theorem concerns the maximization problem:
+
+$$\underset{x}{\text{max}} \; f(x,t)$$
+$$\text{s.t.}:$$
+$$x \in S,$$ 
+where $t$ is for instance a real parameter, $S$ is a convex subset of $\mathbb{R}$ (say) and $f$ is assumed continuously differentiable in both variables. Whenever this problem has an interior solution (i.e. in the interior of $S$) $x^{*}(t)$ for $t$ in an interval $I=]t_{0},t_{1}[$, then, the value function attached to this problem satisfies (assuming this value function is differentiable)[^1]:
+$$V'(t)=\frac{\partial f}{\partial t}(x^{*}(t),t),$$
+in this interval. In other words, the derivative of the value function can be computed as if the command was fixed at $x^{*}(t)$ in the marginal experiment. Indeed, we have:
+$$\frac{\partial f}{\partial x}(x^{*}(t),t)=0,$$
+so that this term drops out in the variation of $f$:
+$$dV=\frac{\partial f}{\partial x}(x^{*}(t),t)dx+\frac{\partial f}{\partial t}(x^{*}(t),t)dt.$$
+
+The envelope theorem derives its name from the geometric situation. For each $t$, the function $f(\cdot,t)$ corresponds to a curve ${\cal C}_{t}$. The curve corresponding to $V(\cdot)$ is the upper envelope of the ${\cal C}_{t}$'s. Now the tangent to the upper envelope at point $t$ is equal to the tangent to the supporting curve ${\cal C}_{t}$ at this same point.
+
+Applied to the constrained optimization context, this means that we can evaluate the change in the value function when constraints change by choosing a second best candidate to the choice of $x$. This second best should make full use of the relaxation of the constraints however. The reasoning is sketched below.
+
+Let $x^{*}(\alpha,\beta)$ be the optimal solution as a function of parameters. Consider a small change from $(0,0)$ to $(\alpha,\beta)$. We can decompose the change in the value function as follows. We move the choice of $x$ from $x^{*}(0,0)$ to $\hat{x}(\alpha,\beta)$ where $\hat{x}(\alpha,\beta)$ is built to keep saturated constraints satisfied for the new parameters $(\alpha,\beta)$ (I write the change in $g$ as if all inequality constraints were saturated; one should in fact keep track of the indices of saturated constraints but the argument goes through unchanged, using the slackness condition in the last step below):
+$$\langle\nabla_{x^{*}(0,0)}g,\hat{x}(\alpha,\beta)-x^{*}(0,0)\rangle=\alpha,$$
+$$\langle\nabla_{x^{*}(0,0)}h,\hat{x}(\alpha,\beta)-x^{*}(0,0)\rangle=\beta.$$
+We then move from $\hat{x}(\alpha,\beta)$ to $x^{*}(\alpha,\beta)$. Both points $\hat{x}(\alpha,\beta)$ and $x^{*}(\alpha,\beta)$ satisfy the constraints $g(x)\leq\alpha$ and $h(x)=\beta$, and given that $x^{*}(\alpha,\beta)$ is optimal under the constraint, the change in the value of $f$ along this move is negligible. The change in the value function can thus be computed as:
+$$\langle\nabla_{x^{*}(0,0)}f,\hat{x}(\alpha,\beta)-x^{*}(0,0)\rangle.$$
+Using the multiplier rule to replace $\nabla_{x^{*}(0,0)}f$ by $\langle\gamma_{*},\nabla g(x)\rangle+\langle\lambda_{*},\nabla h(x)\rangle$, this leads to (after some easy calculations):
+$$\langle\nabla_{x^{*}(0,0)}f,\hat{x}(\alpha,\beta)-x^{*}(0,0)\rangle=\langle\gamma,\alpha\rangle+\langle\lambda,\beta\rangle.$$
+
+[^1]: For a rigorous discussion of envelope theorems, you might want to check Milgrom-Segal, 2002, 'Envelope Theorems for Arbitrary Choice Sets', *Econometrica* 70 (2):583-601.

@@ -23,7 +23,7 @@ fullview: false
 $$p_{\theta_{t},t}=E_{t}[z_{t+1}x_{\theta_{t},t+1}].$$
 
 * In the absence of arbitrage, the discount factor is strictly positive and we can define risk neutral probabilities with derivative:
-$$\psi_{t+1}=R^{f}_{t+1}\frac{m_{t+1}}{m_{t}},$$
+$$\psi_{t+1}=R^{f}_{t+1}z_{t+1},$$
 ($E_{t}[\psi_{t+1}]=1$) so that for any $x$ that is ${\cal F}_{t}$ measurable:
 $$E_{t}[\psi_{t+1}x]=\tilde{E}_{t}[x].$$
 

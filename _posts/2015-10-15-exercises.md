@@ -14,7 +14,7 @@ fullview: false
 ## Mean-Variance
 
 
-### Exercise 1
+### Exercise 1.1
 
 
 Take the CARA normal set up (see [this post](/ensae/2014/10/07/static.html)) without labour income. Assume that there is no riskless asset.
@@ -27,7 +27,7 @@ Take the CARA normal set up (see [this post](/ensae/2014/10/07/static.html)) wit
 
 4. Suppose now that we have a riskless asset. How does that affect the paradox identified in question 3 ?
 
-### Exercise 2
+### Exercise 1.2
 
 See [here](https://github.com/investmentmath/ENSAE/blob/master/efffront_exercise.ipynb) for the corresponding Jupyter/IPython notebook. See also [this post](/ensae/2015/10/17/ipython.html) for some indications on how to use this resource.
 
@@ -47,11 +47,11 @@ To what value $\rho_{\star}$ does the tangent portfolio correspond ?
 
 6. Most financial advisors propose ranges of multi-asset portfolios which contain no cash. In particular a 'safe' portfolio containing $20\%$ equities would typically have $80\%$ in bonds. What conditions concerning bonds' expected returns would be required for such portfolios to be on the efficient frontier ?
 
-### Exercise 3
+### Exercise 1.3
 
 In the previous exercise, we mention the possibility of adding a 'no borrowing constraint' to the initial mean-variance setup. This says that all portfolio weights should be positive. Solving such problems requires the use of quadratic programming techniques. The following [notebook](https://github.com/investmentmath/ENSAE/blob/master/usingcvxopt.ipynb) uses this [package](http://cvxopt.org/) to deal with this.
 
-### Exercise 4
+### Exercise 1.4
 
 The context is that studied in the section on mean variance efficiency with a riskless asset (see [this post](/ensae/2014/10/07/static.html)). We consider an investor with the following utility function:
 $$r^{f}+\pi'(\mu-r^{f}e)-\frac{\rho}{2}\pi'\Sigma \pi.$$ 
@@ -62,8 +62,28 @@ $$r^{f}+\pi'(\mu-r^{f}e)-\frac{\rho}{2}\pi'\Sigma \pi.$$
 
 ## Dynamics, discrete time
 
+### Exercise 2.1
 
-### Exercise 5
+We consider the discrete time optmization problem with no interim consumption, CRRA terminal utility (date $T$) of wealth with $\rho > 1$, no consumption and no income and finally i.i.d. returns (this is the first example of the course). The command is the set of portfolio proportions $\pi_{t}$ at each date $t$. We assume that there is a portfolio such that:
+$$E\left[\frac{(\pi'R)^{1-\rho}}{1-\rho}\right]>-\infty,$$
+and in particular almost surely:
+$$(\pi'R)^{1-\rho}>0.$$
+
+1. Write the optimization program as of date $t$ for a given initial wealth $w_{t}$.
+
+2. Consider the optimization program as of date $T-1$, as a function of $w_{T-1}$. Comment on the convexity/concavity of the objective function and that of the constraint. Describe the first order condition. Is it sufficient? We assume below that there is a solution.
+
+3. Show that $V_{T-1}(w)$ is proportional to $w^{1-\rho}$. Determine the constant of proportionality as a function of the optimal portfolio.
+
+4. Solve for the value function and the optimal portfolio at any date $t$ by recurrence.
+
+5. Does the optimal portfolio depend on the investment horizon? Why? 
+
+### Exercise 2.2
+
+Take the same context as in 2.1, changing the utility function to log-utility. Solve the model following the same steps as above.
+
+### Exercise 2.3 
 
 We consider initially a two period framework. Investment takes place in date $t=0$ and utility of wealth is measured in $t=1$. There are two assets, a riskless asset with return $R^{f}$ and a risky asset with return $\tilde{R_{1}}$, $E[\tilde{R}_{1}]=\mu_{1}$, $\tilde{R}_{1} \geq 0$ almost surely. We assume that the support of the distribution of $\tilde{R}_{1}$ is $]0,+\infty[$. The investor maximizes the following utility function ($\rho>1$):
 $$E\left[\frac{\tilde{(w_{1}}-\underline{w}_{1})^{1-\rho}}{1-\rho}\right],$$
@@ -82,7 +102,7 @@ Returns are as above, with a constant cash return and i.i.d. risky asset returns
 Explain why the optimal investment $\pi^{\star}_{t}$ ($t=0,\ldots,T-1$) is stationary in time.
 
 
-### Exercise 6
+### Exercise 2.4 
 
 We consider the discrete time program with i.i.d. returns and CRRA terminal utility of wealth ($\rho>1$):  
 $$E_{t}\left[\frac{\tilde{w}_{T}^{1-\rho}}{1-\rho}\right],$$
@@ -114,7 +134,7 @@ is $\tilde{R}_{T}+d\theta$. The induced change in the optimal position in the ri
 the relationship between $d\theta$ and $d\pi^{\star}$ is:
 $$\frac{d\pi^{\star}}{d\theta}=\frac{1}{\rho}\frac{E_{T-1}[(R^{f}+\pi(\tilde{R}_{T}-R^{f}))^{-\rho}]}
 {E_{T-1}[(\tilde{R}_{T}-R^{f})^{2}(R^{f}+\pi(\tilde{R}_{T}-R^{f}))^{-\rho-1}]}+\frac{(\pi^{\star})^{2}}{1+R^{f}}.$$
-Deduce that the demand in risky asset is increasing in the $d\theta$. Why can't we conclude from this that an increase in 
+Deduce that the demand in risky asset is increasing in $d\theta$. Why can't we conclude from this that an increase in 
 $\mu_{T-1}$ increases the demand from the risky asset?
 
 
@@ -134,7 +154,7 @@ is well defined uniformly in $\pi$ and reflecting the monotonicity in $\psi(\cdo
 
 ## Dynamics continuous time
 
-### Exercise 7
+### Exercise 3.1
 
 We consider a Brownian motion $(B_{t})_{[0,T]}$ with its natural filtration ${\cal F}$. 
 We are given a set of times dates $0 \leq t_{1} < t_{2} < \cdots < t_{n+1} \leq T$.
@@ -158,7 +178,7 @@ Show that $M_{t}^{2}-[M]_{t}$ is a martingale.
 4. What is the relationship between the variance of $M_{t}$ and its quadratic variation.
 
 
-### Exercise 8
+### Exercise 3.2
 
 Consider a security which pays $1$ at date $T$. Its price at date $t$ is $P_{t}^{T}$. Assume the price follows the SDE:
 $$\frac{dP_{t}^{T}}{P_{t}^{T}}=r_{t}dt+\sigma_{t}^{T}dB_{t},$$
@@ -188,7 +208,7 @@ $$\int_{t}^{h}b(h-u)^{2}du=\frac{1}{\rho^{2}}\left[(h-t)-b(h-t)\right]-\frac{1}{
 
 7. Give its volatility.
 
-### Exercise 9
+### Exercise 3.3
 
 The setup is that of the previous exercise. We now modify the diffusion followed by the price as follows:
 $$\frac{dP_{t}^{T}}{P_{t}^{T}}=(r_{t}+\sigma_{t}^{T}\lambda)dt+\sigma_{t}^{T}dB_{t},$$
@@ -203,4 +223,15 @@ We admit that we can find a new probability measure $Q$ (called the risk neutral
 
 3. Give the price function and price volatility. What has changed versus the previous exercise.
 
+### Exercise 3.4 
 
+Consider the familiar "budget" equation relating the value of a portfolio $V_{\pi}$ and the price of its constituents $P_{i}$:
+$$\frac{dV_{\pi,t}}{V_{\pi,t}}=\sum_{i=1}^{N}\pi_{i,t}\frac{dP_{i,t}}{P_{i,t}}.$$
+We assume prices and portfolio values are strictly positive. Take another asset price $N_{t}$ also assumed to be strictly positive. Take $N_{t}$ as the new numeraire and express values in terms of it:
+$$\tilde{V}_{\pi,t}=\frac{V_{\pi,t}}{N_{t}},$$
+$$\tilde{P}_{i,t}=\frac{P_{i,t}}{N_{t}},$$
+It is natural to expect the first "budget" equation to hold under the new numeraire.
+
+1. Assume standard differential calculus applies to all quantities. Show that the above conjecture holds.
+
+2. Same under Ito calculus.
